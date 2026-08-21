@@ -1,55 +1,51 @@
 class NachoFlow < Formula
-  desc "Autonomous multi-tier local/cloud LLM router with real-time pricing"
-  homepage "https://github.com/dixieflatline76/nacho-flow"
-  version "0.2.0"
+  desc "High-performance OpenAI-compatible hybrid AI gateway for local GPUs and cloud APIs"
+  homepage "https://spicebox.dev"
+  version "0.5.1"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/dixieflatline76/nacho-flow/releases/download/v0.2.0/nacho-flow-0.2.0-darwin-arm64"
-      sha256 "fbfdca1786ae12de8a5accf72e6b8cd0654f4ade894315641719ab6700039978"
-
-      def install
-        bin.install "nacho-flow-0.2.0-darwin-arm64" => "nacho-flow"
-      end
+    on_arm do
+      url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-darwin-arm64"
+      sha256 "2d9212fb372a85de551f95938441588fcd834c488370fe17b397a2f26d3cd90f"
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/dixieflatline76/nacho-flow/releases/download/v0.2.0/nacho-flow-0.2.0-darwin-amd64"
-      sha256 "853d4d8648c703174b5df6b68a87b91f75619b17488954964e00048a6efa436c"
-
-      def install
-        bin.install "nacho-flow-0.2.0-darwin-amd64" => "nacho-flow"
-      end
+    on_intel do
+      url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-darwin-amd64"
+      sha256 "4f17876383c4143ad7ebc1d9a98353174f25924addf85eb45174f7de47cfe03b"
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dixieflatline76/nacho-flow/releases/download/v0.2.0/nacho-flow-0.2.0-linux-arm64"
-      sha256 "ed654514b2f8471bc68b9370169d3799fbda6498b2f5b73c6f9be9659270d914"
-
-      def install
-        bin.install "nacho-flow-0.2.0-linux-arm64" => "nacho-flow"
-      end
+    on_intel do
+      url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-linux-amd64"
+      sha256 "b46afafa81ce9602937f5204765970780caf5a48a208a68cb16590c171720ac9"
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/dixieflatline76/nacho-flow/releases/download/v0.2.0/nacho-flow-0.2.0-linux-amd64"
-      sha256 "3ad8ff3e7c3425a521e5eff49bbd632ab6061c87f2405e0c0cfa34ec4c399981"
-
-      def install
-        bin.install "nacho-flow-0.2.0-linux-amd64" => "nacho-flow"
-      end
+    on_arm do
+      url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-linux-arm64"
+      sha256 "f67b6e6e5ebec984cf87031a62e9bb171f4c42b1d113886674e6a7430977b247"
     end
+  end
+
+  def install
+    binary_name = "nacho-flow"
+    if OS.mac?
+      binary_name = Hardware::CPU.arm? ? "nacho-flow-#{version}-darwin-arm64" : "nacho-flow-#{version}-darwin-amd64"
+    elsif OS.linux?
+      binary_name = Hardware::CPU.arm? ? "nacho-flow-#{version}-linux-arm64" : "nacho-flow-#{version}-linux-amd64"
+    end
+
+    bin.install binary_name => "nacho-flow"
   end
 
   service do
-    run [opt_bin/"nacho-flow", "start"]
+    run [opt_bin/"nacho-flow", "run"]
     keep_alive true
     log_path var/"log/nacho-flow.log"
     error_log_path var/"log/nacho-flow.err.log"
+    working_dir var
   end
 
   test do
-    assert_match "Autonomous Multi-Tier LLM Proxy & Router", shell_output("#{bin}/nacho-flow --help")
+    system "#{bin}/nacho-flow", "version"
   end
 end
