@@ -1,28 +1,28 @@
 class NachoFlow < Formula
   desc "High-performance OpenAI-compatible hybrid AI gateway for local GPUs and cloud APIs"
-  homepage "https://spicebox.dev"
-  version "0.5.1"
+  homepage "https://spicebox.dev/nacho-flow/"
+  version "0.5.2"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-darwin-arm64"
-      sha256 "2d9212fb372a85de551f95938441588fcd834c488370fe17b397a2f26d3cd90f"
+      sha256 "5cd672e8e2c4c516f307ca5fe259ba44773568ddeb5ff2bd1dd0546305260858"
     end
     on_intel do
       url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-darwin-amd64"
-      sha256 "4f17876383c4143ad7ebc1d9a98353174f25924addf85eb45174f7de47cfe03b"
+      sha256 "617d7d891200e0990fb796a3da57fc82da32797b377015b04896256d3be43e70"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-linux-amd64"
-      sha256 "b46afafa81ce9602937f5204765970780caf5a48a208a68cb16590c171720ac9"
+      sha256 "a9569977b10e25d58e4e2930e5b4bff969515a269a0815735b3db60a3a2c0166"
     end
     on_arm do
       url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-linux-arm64"
-      sha256 "f67b6e6e5ebec984cf87031a62e9bb171f4c42b1d113886674e6a7430977b247"
+      sha256 "a152fabb462365a5ab66344117bae1d85245277f716d55c10be1718bcaf73736"
     end
   end
 
