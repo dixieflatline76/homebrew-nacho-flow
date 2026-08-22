@@ -7,22 +7,22 @@ class NachoFlow < Formula
   on_macos do
     on_arm do
       url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-darwin-arm64"
-      sha256 "4617121f2c7a0a21f1b93ccc69bbc9ed75d232b2f0d5272b3bd95d29a30058e8"
+      sha256 "5cd672e8e2c4c516f307ca5fe259ba44773568ddeb5ff2bd1dd0546305260858"
     end
     on_intel do
       url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-darwin-amd64"
-      sha256 "71e7b203cc32fbefef4cd987bfc43ab0ea56d257bff20026d08bd5b53a4d0166"
+      sha256 "617d7d891200e0990fb796a3da57fc82da32797b377015b04896256d3be43e70"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-linux-amd64"
-      sha256 "fbcca16715698dc8256db5ad43b87d4fc5e312d0c047c107621b2481646bc0d4"
+      sha256 "a9569977b10e25d58e4e2930e5b4bff969515a269a0815735b3db60a3a2c0166"
     end
     on_arm do
       url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-linux-arm64"
-      sha256 "de51fa63c481ace97bf56717ca57296525f4f47d4013e4ec5fab1e8cd8a8e28b"
+      sha256 "a152fabb462365a5ab66344117bae1d85245277f716d55c10be1718bcaf73736"
     end
   end
 
