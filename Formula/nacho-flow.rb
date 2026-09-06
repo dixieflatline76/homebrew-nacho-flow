@@ -1,28 +1,28 @@
 class NachoFlow < Formula
-  desc "High-performance OpenAI-compatible hybrid AI gateway for local GPUs and cloud APIs"
+  desc "Agent Supervisor & Model Dispatcher for coding agents"
   homepage "https://spicebox.dev/nacho-flow/"
-  version "0.6.0"
-  license "MIT"
+  version "1.0.0"
+  license "AGPL-3.0-or-later"
 
   on_macos do
     on_arm do
       url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-darwin-arm64"
-      sha256 "f2f28cd73a52ebc839754c68ecae1f9b993635bed5eb3e26bd87a4e8b96c97db"
+      sha256 "f58c3c1f24d49ec1c7f1d6f464c1f24e237400fb08626224e86e6baef4ae50d7"
     end
     on_intel do
       url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-darwin-amd64"
-      sha256 "63bdd0e4262c22b4ecf251ad6f7df06ea390c29d1b1cb71f73483edd30f42a24"
+      sha256 "f7d16dab35c3db5f75ff0ea76274f8c17e944cf30346394b2d0eaea4585fc660"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-linux-amd64"
-      sha256 "f86fb0e5b00b651fb0b032c6478935f3ecd8fa90d984dc736985f1eed5ae1810"
+      sha256 "a5109c4ddf0f49c0c4ef4e9be2122630dbc20ea65feed015133fba88b3e9a068"
     end
     on_arm do
       url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-linux-arm64"
-      sha256 "b23766834761c2396debbda93e925892dcfed9a8154bd792caf569df8a7aff15"
+      sha256 "9f1ef939e02ae5202f9c4e0ea2b661dfcbc65f60c3d0c02c96bc178d01aa8974"
     end
   end
 
