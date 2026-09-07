@@ -1,28 +1,28 @@
 class NachoFlow < Formula
   desc "Agent Supervisor & Model Dispatcher for coding agents"
   homepage "https://spicebox.dev/nacho-flow/"
-  version "1.0.0"
+  version "1.0.1"
   license "AGPL-3.0-or-later"
 
   on_macos do
     on_arm do
       url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-darwin-arm64"
-      sha256 "f719f8a097884d311bf0d154c9a7d97731d638257a5946d428f70c6ca2ec91d7"
+      sha256 "e6fbf4848a6e6020688d12f1dfd044a234fa988832a910a571dbe5a991477baa"
     end
     on_intel do
       url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-darwin-amd64"
-      sha256 "aafebc92281ff6ea4e6107a24cc8250bb441a4ec5a541134e210919432793725"
+      sha256 "ebeb24439bf104cd7af66ce069afc27193f2ebd15d10eadcb68b384ca1634062"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-linux-amd64"
-      sha256 "4e4f9cb22043ddee4cdcd9f114f651518ce3535d5f90e0a6549c4449cfd3c582"
+      sha256 "2629c1d0044ef1fda2a1af717a46a2b10e56941fadfb7f15e5983d4cb47f1677"
     end
     on_arm do
       url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-linux-arm64"
-      sha256 "5c180ac4f27f0c2d2778aa4951f04e55d6ee771e4491c11f57191a55600905c3"
+      sha256 "1f32d019355b53c0a0e21e557f90390acd395677162100e97300c699afff1725"
     end
   end
 
