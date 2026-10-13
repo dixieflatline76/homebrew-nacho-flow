@@ -7,11 +7,11 @@ class NachoFlow < Formula
   on_macos do
     on_arm do
       url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-darwin-arm64"
-      sha256 "997cfae2374bb8f2d8ea7355871cb46a8f481d00d3fa0b12e74bd7111681b249"
+      sha256 "4d8cd8ca90200a07fa6450fe71308a365f00a00fe3d1eac3c30b47ed4f2cad7d"
     end
     on_intel do
       url "https://github.com/dixieflatline76/nacho-flow/releases/download/v#{version}/nacho-flow-#{version}-darwin-amd64"
-      sha256 "e2ec15e787aff1d0979a8bada654e7a0a3d14f12ec4eca5ed74be3445d5b9211"
+      sha256 "7ddab2f35ac10b050b50622041236f3c84f5c954cdd47f4a4df6854b15fd4f21"
     end
   end
 
